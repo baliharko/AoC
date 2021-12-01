@@ -29,6 +29,6 @@ public class Day1b {
                 times++;
         }
 
-        System.out.println("\n" + times);
+        System.out.println(times);
     }
 }
