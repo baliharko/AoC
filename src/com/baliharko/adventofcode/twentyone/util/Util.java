@@ -9,6 +9,6 @@ import java.util.List;
 public abstract class Util {
 
     public static List<String> readFile(String path) throws IOException {
-        return Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
+        return Files.readAllLines(Paths.get("src/resources/twentyone" + path), StandardCharsets.UTF_8);
     }
 }

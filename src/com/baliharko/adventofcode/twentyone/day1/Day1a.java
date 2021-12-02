@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Day1a {
 
     public static void main(String[] args) throws IOException {
-        List<String> input = Util.readFile("src/resources/twentyone/day1/input.txt");
+        List<String> input = Util.readFile("/day1/input.txt");
 
         AtomicInteger last = new AtomicInteger(0);
         AtomicInteger times = new AtomicInteger(0);

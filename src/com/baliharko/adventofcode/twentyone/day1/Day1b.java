@@ -9,7 +9,7 @@ import java.util.List;
 public class Day1b {
 
     public static void main(String[] args) throws IOException {
-        List<Integer> input = Util.readFile("src/resources/twentyone/day1/input.txt")
+        List<Integer> input = Util.readFile("/day1/input.txt")
                 .stream().mapToInt(Integer::parseInt).boxed().toList();
 
         List<Integer> windows = new ArrayList<>();
