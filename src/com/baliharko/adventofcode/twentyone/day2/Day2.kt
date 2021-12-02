@@ -1,8 +1,8 @@
 package com.baliharko.adventofcode.twentyone.day2
 
-import com.baliharko.adventofcode.twentyone.util.Util
+import com.baliharko.adventofcode.util.Util
 
-data class Instruction(val dir: String, val vel: Int)
+internal data class Instruction(val dir: String, val vel: Int)
 
 object Count {
     var horizontal: Int = 0
@@ -15,7 +15,7 @@ object Count {
     }
 }
 
-val input: List<Instruction> = Util.readFile("/day2/input.txt")
+internal val input: List<Instruction> = Util.readFile("/twentyone/day2/input.txt")
     .map { line ->
         Instruction(
             line.substring(0, line.length - 2),

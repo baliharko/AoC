@@ -1,6 +1,6 @@
 package com.baliharko.adventofcode.twentyone.day1;
 
-import com.baliharko.adventofcode.twentyone.util.Util;
+import com.baliharko.adventofcode.util.Util;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 public class Day1b {
 
     public static void main(String[] args) throws IOException {
-        List<Integer> input = Util.readFile("/day1/input.txt")
+        List<Integer> input = Util.readFile("/twentyone/day1/input.txt")
                 .stream().mapToInt(Integer::parseInt).boxed().toList();
 
         List<Integer> windows = new ArrayList<>();
