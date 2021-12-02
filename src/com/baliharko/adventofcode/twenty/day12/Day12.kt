@@ -1,9 +1,7 @@
 package com.baliharko.adventofcode.twenty.day12
 
 import com.baliharko.adventofcode.util.Util
-import java.util.concurrent.TimeUnit
 import kotlin.math.abs
-import kotlin.system.measureNanoTime
 
 val input: List<String> = Util.readFile("/twenty/day12/input.txt")
 internal val instructions: List<Instruction> = input.map { it.toInstruction }
@@ -24,14 +22,28 @@ internal object Ship {
         }
     }
 
-    fun rotate(vel: Int, clockwise: Boolean) {
-        val directions: List<Char> =
-            if (clockwise) arrayListOf('N', 'E', 'S', 'W')
-            else arrayListOf('N', 'W', 'S', 'E')
+//    fun rotate(vel: Int, clockwise: Boolean) {
+//        val directions: List<Char> =
+//            if (clockwise) arrayListOf('N', 'E', 'S', 'W')
+//            else arrayListOf('N', 'W', 'S', 'E')
+//
+//        val currentDirIndex = directions.indexOf(forward)
+//        val newForwardIndex = (currentDirIndex + vel / 90) % directions.size
+//        forward = directions[newForwardIndex]
+//    }
 
-        val currentDirIndex = directions.indexOf(forward)
-        val newForwardIndex = (currentDirIndex + vel / 90) % directions.size
-        forward = directions[newForwardIndex]
+    // Recursive
+    fun rotate(vel: Int, clockwise: Boolean) {
+        if (vel == 0) return
+        else {
+            when (forward) {
+                'N' -> forward = if (clockwise) 'E' else 'W';
+                'E' -> forward = if (clockwise) 'S' else 'N';
+                'S' -> forward = if (clockwise) 'W' else 'E';
+                'W' -> forward = if (clockwise) 'N' else 'S';
+            }
+            rotate(vel - 90, clockwise)
+        }
     }
 }
 
@@ -53,6 +65,10 @@ fun day12a() {
     }
     val manhattan = abs(Ship.x) + abs(Ship.y)
     print("$manhattan ")
+}
+
+fun day12b() {
+
 }
 
 
