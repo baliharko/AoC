@@ -23,7 +23,7 @@ internal val input: List<Instruction> = Util.readFile("/twentyone/day2/input.txt
         )
     }
 
-val day1a: Int
+val day2a: Int
     get() {
         input.forEach { (dir, vel) ->
             when (dir) {
@@ -36,7 +36,7 @@ val day1a: Int
         return Count.depth * Count.horizontal
     }
 
-val day1b: Int
+val day2b: Int
     get() {
         input.forEach { (dir, vel) ->
             when (dir) {
@@ -56,5 +56,5 @@ fun main() {
 //    println(day1a);
 
     Count.reset()
-    println(day1b)
+    println(day2b)
 }

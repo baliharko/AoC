@@ -18,6 +18,6 @@ object Util {
     fun measure(block: () -> Unit) {
         val nanos = measureNanoTime(block)
         val millis = TimeUnit.NANOSECONDS.toMillis(nanos)
-        print("Time: $millis ms")
+        print("\nTime: $millis ms")
     }
 }

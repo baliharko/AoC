@@ -1,4 +1,4 @@
-package com.baliharko.adventofcode.twentyone.day3
+package com.baliharko.adventofcode.twentyone.day3.part1
 
 import com.baliharko.adventofcode.util.Util
 import com.baliharko.adventofcode.util.Util.measure
@@ -9,7 +9,7 @@ fun getGammaBit(index: Int): Char =
     if (input.count { it[index] == '0' } > input.count { it[index] == '1' }) '0' else '1'
 
 fun getEpsilonBit(index: Int): Char =
-    if (input.count { it[index] == '0' } > input.count { it[index] == '1' }) '1' else '0'
+    if (input.count { it[index] == '0' } < input.count { it[index] == '1' }) '0' else '1'
 
 fun getRate(gamma: Boolean): String {
     var rate: String = ""
@@ -20,9 +20,11 @@ fun getRate(gamma: Boolean): String {
 }
 
 val String.toDecimal: Int
-    get() { return toInt(2) }
+    get() {
+        return toInt(2)
+    }
 
-fun solvePart1() {
+fun solve() {
     val gamma = getRate(true).toDecimal
     val epsilon = getRate(false).toDecimal
     println(gamma * epsilon)
@@ -30,6 +32,6 @@ fun solvePart1() {
 
 fun main() {
     measure {
-        solvePart1();
+        solve()
     }
 }
