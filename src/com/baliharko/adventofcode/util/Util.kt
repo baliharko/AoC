@@ -5,6 +5,7 @@ import java.io.IOException
 import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.time.Instant
 import java.util.concurrent.TimeUnit
 import kotlin.system.measureNanoTime
 
@@ -18,6 +19,6 @@ object Util {
     fun measure(block: () -> Unit) {
         val nanos = measureNanoTime(block)
         val millis = TimeUnit.NANOSECONDS.toMillis(nanos)
-        print("\nTime: $millis ms")
+        print("\nTime: $millis ms\n")
     }
 }
